@@ -58,7 +58,7 @@ class ModernEnchantmentRegisterer : ModernEnchantmentRegistererProxy {
             val isVanilla = vanillaEnchantments.contains(key)
             val eco = EcoEnchants.getByID(key.key)
 
-            if (isVanilla) {
+            if (isVanilla || key.key.contains("customcraft")) {
                 ModifiedVanillaCraftEnchantment(key, registry)
             } else if (eco != null) {
                 eco as Enchantment
